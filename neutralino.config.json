@@ -1,0 +1,52 @@
+{
+  "$schema": "https://raw.githubusercontent.com/neutralinojs/neutralinojs/main/schemas/neutralino.config.schema.json",
+  "applicationId": "local.genshin.launcher",
+  "version": "0.1.0",
+  "defaultMode": "window",
+  "port": 0,
+  "documentRoot": "/dist",
+  "url": "/",
+  "enableServer": true,
+  "enableNativeAPI": true,
+  "tokenSecurity": "one-time",
+  "logging": {
+    "enabled": true,
+    "writeToLogFile": true
+  },
+  "nativeAllowList": [
+    "app.*",
+    "os.*",
+    "storage.*",
+    "debug.log",
+    "window.*",
+    "filesystem.*",
+    "computer.*"
+  ],
+  "globalVariables": {},
+  "modes": {
+    "window": {
+      "title": "原神本地启动器",
+      "width": 1180,
+      "height": 800,
+      "minWidth": 400,
+      "minHeight": 200,
+      "fullScreen": false,
+      "alwaysOnTop": false,
+      "enableInspector": false,
+      "borderless": false,
+      "maximize": false,
+      "hidden": false,
+      "resizable": true,
+      "icon": "/src/icons/LocalLauncher.png",
+      "exitProcessOnClose": false
+    }
+  },
+  "cli": {
+    "binaryName": "GenshinLocalLauncher",
+    "resourcesPath": "/dist/",
+    "extensionsPath": "/extensions/",
+    "clientLibrary": "/dist/neutralino.js",
+    "binaryVersion": "4.11.0",
+    "clientVersion": "3.9.0"
+  }
+}

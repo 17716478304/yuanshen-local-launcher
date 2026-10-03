@@ -1,0 +1,400 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+  color: #f6f7fa;
+  background: #111824;
+}
+button,
+a,
+summary {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  font: inherit;
+  font-size: 12px;
+  color: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 9px 12px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+button:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+button:focus-visible,
+a:focus-visible,
+summary:focus-visible {
+  outline: 2px solid #ffe39b;
+  outline-offset: 4px;
+}
+.launcher {
+  display: flex;
+  min-height: 100vh;
+}
+.sidebar {
+  width: 78px;
+  flex: 0 0 78px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  padding: 26px 10px;
+  background: #141922;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  z-index: 1;
+}
+.sidebar-mark {
+  font-size: 32px;
+  color: #f5dda0;
+  margin-bottom: 70px;
+}
+.game-tab {
+  padding: 4px;
+  border: 2px solid #f5dda0;
+  border-radius: 16px;
+  box-shadow: 0 0 22px #f5dda022;
+}
+.game-tab img {
+  display: block;
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+}
+.sidebar-button {
+  width: 44px;
+  height: 44px;
+  padding: 11px;
+  background: transparent;
+  border-color: transparent;
+  color: #c1c9d5;
+}
+.sidebar-button svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.sidebar-bottom {
+  margin-top: auto;
+}
+.launcher-scene {
+  flex: 1;
+  min-width: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 38px 20px;
+  background-image: linear-gradient(
+      0deg,
+      #111824 30%,
+      rgba(9, 19, 36, 0.12) 70%,
+      rgba(9, 19, 36, 0.12)
+    ),
+    var(--launcher-artwork, url("./assets/genshin-background.webp"));
+  background-size: 100% 100%, 100% auto;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 18px;
+}
+.brand {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px #102544;
+}
+.brand-star {
+  color: #ffe7a7;
+  font-size: 20px;
+  vertical-align: middle;
+}
+.badge {
+  font-size: 11px;
+  padding: 8px 14px;
+  border: 1px solid #ffffff33;
+  border-radius: 24px;
+  background: #14233d80;
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+}
+.hero {
+  flex: 1;
+  min-height: 340px;
+}
+.dashboard {
+  padding: 22px 26px;
+  background: rgba(18, 27, 42, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 18px;
+  box-shadow: 0 16px 45px #07152844;
+  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
+}
+.panel-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 18px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.panel-heading span:last-child {
+  color: #a4b1c5;
+  font-size: 10px;
+  font-weight: 400;
+}
+.details {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr 1.3fr;
+  gap: 22px;
+}
+.details > div + div {
+  border-left: 1px solid #ffffff1c;
+  padding-left: 22px;
+}
+label,
+small {
+  display: block;
+  font-size: 11px;
+  color: #b6c2d5;
+  line-height: 1.6;
+}
+strong {
+  display: block;
+}
+.details strong {
+  font-size: 24px;
+  margin: 8px 0;
+  font-weight: 600;
+}
+.storage {
+  margin-top: 14px;
+  border-top: 1px solid #ffffff1c;
+  padding-top: 10px;
+}
+summary {
+  color: #bdc9dd;
+  font-size: 11px;
+  cursor: pointer;
+  width: fit-content;
+}
+.storage-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 0;
+}
+.storage-content > div {
+  min-width: 0;
+}
+.storage-content button {
+  flex-shrink: 0;
+}
+code {
+  display: block;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+  margin: 5px 0;
+  color: #e2e8f3;
+}
+.status {
+  margin: 12px 0;
+}
+.status strong {
+  font-size: 12px;
+  font-weight: 500;
+  color: #efe0ae;
+}
+.status strong::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  margin-right: 8px;
+  vertical-align: 2px;
+}
+progress {
+  width: 100%;
+  height: 7px;
+  accent-color: #f5d587;
+  margin: 10px 0 4px;
+}
+pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  max-height: 130px;
+  overflow: auto;
+  font-size: 12px;
+  padding: 10px;
+  background: #502830;
+  color: #ffe0dc;
+  border-radius: 8px;
+}
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+.tools {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.tools button {
+  font-size: 11px;
+  padding: 8px 10px;
+}
+.primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  min-width: 210px;
+  min-height: 52px;
+  padding: 12px 24px;
+  border-radius: 28px;
+  background: #f4d27e;
+  color: #29303b;
+  font-size: 16px;
+  font-weight: 700;
+  border: 1px solid #ffe9ad;
+  box-shadow: 0 4px 22px #f4d27e22;
+}
+.primary:hover {
+  background: #ffe5a3;
+  border-color: #fff2cf;
+}
+.play-icon {
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+  font-size: 16px;
+}
+.dashboard > button {
+  margin: 8px 8px 8px 0;
+}
+.migration {
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+.migration button {
+  margin: 4px 6px 4px 0;
+}
+.notice {
+  font-size: 10px;
+  line-height: 1.7;
+  color: #b4c1d6;
+  margin: 12px 0 0;
+}
+.notice button {
+  font-size: 10px;
+  padding: 2px 6px;
+  border: 0;
+  background: transparent;
+  text-decoration: underline;
+}
+@media (min-height: 850px) {
+  .hero {
+    min-height: 400px;
+  }
+}
+@media (max-width: 900px) {
+  .launcher-scene {
+    padding: 20px;
+  }
+  .dashboard {
+    padding: 16px;
+  }
+  footer {
+    align-items: flex-end;
+  }
+  .primary {
+    min-width: 170px;
+  }
+  .details {
+    gap: 14px;
+  }
+  .details > div + div {
+    padding-left: 14px;
+  }
+}
+@media (max-width: 620px) {
+  .sidebar {
+    width: 60px;
+    flex-basis: 60px;
+    padding: 20px 6px;
+  }
+  .game-tab img {
+    width: 36px;
+    height: 36px;
+  }
+  .launcher-scene {
+    padding: 16px 12px;
+    background-size: 100% 100%, auto 380px;
+    background-position: center top;
+  }
+  .badge {
+    font-size: 9px;
+    padding: 6px 8px;
+  }
+  .brand {
+    font-size: 11px;
+    letter-spacing: 0;
+  }
+  .hero {
+    min-height: 320px;
+  }
+  .details {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .details > div + div {
+    padding: 10px 0 0;
+    border-left: 0;
+    border-top: 1px solid #ffffff1c;
+  }
+  .details strong {
+    font-size: 20px;
+  }
+  footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+  .primary {
+    width: 100%;
+  }
+  .storage-content {
+    flex-wrap: wrap;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  button {
+    transition: none;
+  }
+}

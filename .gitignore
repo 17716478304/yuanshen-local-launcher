@@ -1,0 +1,55 @@
+# Developer tools' files
+.lite_workspace.lua
+
+# Neutralinojs binaries and builds
+/bin
+**/dist
+
+# Neutralinojs client (minified)
+neutralino.js
+
+node_modules
+
+.tmp/
+
+*.app
+
+.DS_Store
+
+*.neu
+
+/external
+
+.vscode
+
+server_secret.ts
+**/*.secret.ts
+**/secret.ts
+
+/yaaglwd
+/yaaglwdos
+/bh3glb
+/hkrpgcn
+/hkrpgos
+/cbjq
+/cbjqcn
+/napcn
+/napos
+
+/sidecar/sophon_server
+**/__pycache__
+
+.venv/
+.build-cache/
+neu.zip
+protobuf.zip
+sophon_server/hpatchz
+sophon_server/*_pb2.py
+/sidecar/licenses/dependencies/
+/sophon_server/nuitka-crash-report.xml
+
+# Local credentials and runtime output
+.env
+.env.*
+!.env.example
+*.log
