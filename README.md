@@ -1,4 +1,4 @@
-# 原神本地启动器
+# 原神本地启动器（yuanshen-local-launcher）
 
 面向 **Apple Silicon Mac** 的原神国服 Windows PC 本地启动器。基于 [YAAGL](https://github.com/yaagl/yet-another-anime-game-launcher) 0.3.20 定制，提供中文界面、游戏下载与修复、Wine 环境管理和数据迁移。
 
